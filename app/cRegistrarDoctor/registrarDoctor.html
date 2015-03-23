@@ -1,0 +1,22 @@
+<div class="container" ng-controller="registrarCont">
+
+      <form class="form-signin" novalidate>
+        <h2 class="form-signin-heading">Registrar Doctor</h2>
+          <label for="textNombre" class="sr-only">Nombre</label>
+          <input type="text" id="textNombre" class="form-control" placeholder="Nombre" ng-required="" ng-model="nombre" autofocus="" value="h">
+          <label for="textApellido" class="sr-only">Apellido</label>
+          <input type="text" id="textApellido" class="form-control" placeholder="Apellido" ng-required="" ng-model="apellido" autofocus="">
+          <label for="textIdentificacion" class="sr-only">Identificacion</label>
+          <input type="text" id="textIdentificacion" class="form-control" placeholder="Identificacion" ng-required="" ng-model="ident" autofocus="">
+          <label for="textEmail" class="sr-only">Email</label>
+          <input type="text" id="textEmail" class="form-control" placeholder="Email" ng-required="" ng-model="mail" autofocus="">
+          <label for="textNacimiento" class="sr-only">Email</label>
+          <input type="text" id="textNacimiento" class="form-control" placeholder="dd/mm/aaaa" ng-required="" ng-model="fechaNacimiento" autofocus="">
+          <label for="inputPassword" class="sr-only">Constraseña</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Palabra clave" required="" ng-model="contrasenia">
+          <label for="repeatPassword" class="sr-only">Constraseña</label>
+          <input type="password" id="repeatPassword" class="form-control" placeholder="Repetir palabra clave" required="" ng-model="reptContrasenia">
+          </br>
+        <button class="btn btn-lg btn-primary btn-block" ng-disabled="error || incomplete" type="Registrar" ng-click="registrar()">Registrarse!</button>
+      </form>
+</div>

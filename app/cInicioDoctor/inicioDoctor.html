@@ -1,0 +1,83 @@
+<div class="container" ng-controller="inicioDoctorCont">
+
+		<!-- Static navbar -->
+		<nav class="navbar navbar-default" style="margin-top: 20px;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Neuromed</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Pacientes</a></li>
+						<li class="dropdown">
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li class="dropdown-header">Nav header</li>
+								<li><a href="#">Separated link</a></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#/actualizarDatos">Dr. Chaves <span class="sr-only">(current)</span></a></li>
+						<li><a href="#/login/">Cerrar Sesion</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div><!--/.container-fluid -->
+		</nav>
+
+		<!-- Main component for a primary marketing message or call to action -->
+		<div class="input-group q">
+			<span class="input-group-addon" id="sizing-addon2">Filtrar</span>
+			<input type="text" ng-model="query" class="form-control" placeholder="Buscar" aria-describedby="sizing-addon2">
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-md-2" ng-repeat="medico in medicos | filter:query" ng-click="paciente(medico.id)">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">{{medico.identificacion}}</h3>
+					</div>
+					<div class="panel-body">
+						<img ng-src="{{imagenD}}" class="img-responsive">
+					</div>
+					<div class="panel-footer">
+						<p>Nombre: {{medico.nombre}}</p>
+						<p>Ultimo registro: {{medico.fechaVinculacion}}</p>
+					</div>
+				</div>       
+			</div>
+		</div>
+
+    <div class="btn-toolbar q" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group" role="group" aria-label="First group">
+            <button type="button" class="btn btn-default">1</button>
+            <button type="button" class="btn btn-default">2</button>
+            <button type="button" class="btn btn-default">3</button>
+            <button type="button" class="btn btn-default">4</button>
+            <button type="button" class="btn btn-default">5</button>
+            <button type="button" class="btn btn-default">6</button>
+            <button type="button" class="btn btn-default">7</button>
+        </div>
+    </div>
+
+</div>
+
+<!--	<footer class="footer">
+		<div class="container">
+			<br>
+			<p class="text-muted">Place sticky footer content here.</p>
+		</div>
+	</footer> -->
+

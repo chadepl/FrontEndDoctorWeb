@@ -1,0 +1,16 @@
+<div class="container" ng-controller="actualizarCont">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Actualizar Datos de {{medico.nombre}} {{medico.apellido}}</h2>
+          <label for="textNombre" class="sr-only">Nombre</label>
+          <input type="text" id="textNombre" class="form-control" placeholder="{{medico.nombre}}" ng-required="" ng-model="user.nombre" autofocus="">
+          <label for="textApellido" class="sr-only">Nombre</label>
+          <input type="text" id="textApellido" class="form-control" placeholder="{{medico.apellido}}" ng-required="" ng-model="user.nombre" autofocus="">
+          <label for="textIdentificacion" class="sr-only">Identificacion</label>
+          <input type="text" id="textIdentificacion" class="form-control" placeholder="{{medico.identificacion}}" ng-required="" ng-model="user.mail" autofocus="">
+          <label for="textEmail" class="sr-only">Identificacion</label>
+          <input type="text" id="textEmail" class="form-control" placeholder="{{medico.email}}" ng-required="" ng-model="user.mail" autofocus="">
+          </br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="update(user)">Actualizar</button>
+      </form>
+</div>

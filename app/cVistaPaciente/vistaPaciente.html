@@ -1,0 +1,141 @@
+
+
+		<div class="container">
+
+			<!-- Static navbar -->
+			<nav class="navbar navbar-default" style="margin-top: 20px;">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Neuromed</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li ><a href="#">Pacientes</a></li> <!--class="active"-->
+							<li class="dropdown">
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">Nav header</li>
+									<li><a href="#">Separated link</a></li>
+									<li><a href="#">One more separated link</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active"><a href="./">Dr. Chaves <span class="sr-only">(current)</span></a></li>
+							<li><a href="../navbar-fixed-top/">Cerrar Sesion</a></li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div><!--/.container-fluid -->
+			</nav>
+
+			<!-- Main component for a primary marketing message or call to action -->
+
+			<h1>{{paciente.nombre}} {{paciente.apellido}}</h1>
+			<hr>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">Informaci&oacute;n del paciente</h3>
+						</div>
+						<div class="panel-body">
+							<img src="http://placehold.it/500x500" class="img-responsive">
+						</div>
+						<div class="panel-footer">
+							<p>Nombre: {{paciente.nombre}}</p>
+							<p>G&eacute;nero: {{paciente.genero}}</p>
+							<p>&Uacute;ltimo registro: {{paciente.fechaVinculacion}}</p>
+							<p>RH: A+</p>
+							<p>Peso: 120 kg</p>
+							<p>Altura: 1.73 m</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title">Resumen del paciente</h3>
+						</div>
+						<div class="panel-body">
+							<br>
+							<br>
+							<br>
+							<img class="img-responsive" src="http://community.protoshare.com/wp-content/uploads/2012/12/highcharts.png">
+							<br>
+							<br>
+							<br>
+						</div>
+						<div class="panel-footer">
+							Informaci&oacute;n del cuadro
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+           <!-- <div
+                    data-ac-chart="line"
+                    data-ac-data="data"
+                    data-ac-config="config"
+                    class="chart1"
+                    id="chart">
+            </div>-->
+
+
+
+
+			<div class="row">
+				<div class="col-md-12">
+					<p>
+						<h1>Cuadros Registrados</h1>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Filtrar" ng-model="busqueda">
+						</div>
+                        </br>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="dd/mm/aaaa - dd/mm/aaaa"  ng-model="fecha">
+							    <span class="input-group-btn">
+								    <button class="btn btn-default" type="button">Buscar</button>
+							    </span>
+                        </div>
+					</p>
+					<div class="bs-example" data-example-id="collapse-accordion">
+
+							<div class="panel panel-default" ng-repeat="ep in paciente.episodios | filter:busqueda">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										<a class="" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+											{{ep.fecha}}
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree" aria-expanded="true" style="" >
+									<div class="panel-body">
+                                        <p> El nivel de dolor es de {{ep.nivelDolor}}  y se ubica en el lobulo {{ep.localizacion}} </p>
+                                        <p>Comentarios del doctor:
+                                        {{ep.comentarios}} </p>
+									</div>
+								</div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Comentar"  ng-model="comentario">
+							    <span class="input-group-btn">
+								    <button class="btn btn-default" ng-click="comentar(ep.id,comentario)" type="button">Comentar</button>
+							    </span>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
